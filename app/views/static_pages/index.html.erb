@@ -1,0 +1,11 @@
+<div class="trips-wrapper">
+	<div class="row">
+		<h2 id="trips-banner">Guest Check-in</h2>
+		<p>Select your trip from the list below and you'll be good to start checking guests in!</p>
+
+		<% @trips.each do |trip| %>
+			<%= trip.bus_name %>
+		<% end %>
+
+	</div>
+</div>

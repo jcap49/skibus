@@ -1,7 +1,7 @@
 class TripsController < ApplicationController
 
-  def list_trip
-
+  def index
+    @trips = Trip.all
   end
 
   def add_trip

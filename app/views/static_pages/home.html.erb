@@ -4,11 +4,15 @@
 		<h3>This is a tool designed to help you during your time as a host.</h2>
 		<h3>Select from one of the options below:</h3>
 	</div>
-	
 	<br>
 	<br>
 	<div class="row" id="options">
-		<%= link_to "Guest Check-in", checkin_path, class: "large button" %>
+		<%= link_to "Add Trip", addtrip_path, class: "large button" %>
+		<ul id="addtrip-list-items">
+			<li>Use this section to upload your trip roster.</li>
+			<li>Be sure to have a copy on your device of the Excel sheet containing the trip roster handy.</li>
+		</ul>
+		<%= link_to "Guest Check-in", triplist_path, class: "large button" %>
 		<ul id="checkin-list-items">
 			<li>Use this section to check guests in at the beginning and end of each trip.</li>
 			<li>Be sure to have a copy on your device of the Excel sheet containing the trip roster handy.</li>

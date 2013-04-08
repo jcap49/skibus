@@ -6,6 +6,13 @@ class UploadsController < ApplicationController
     # binding.pry
     @trip = Trip.create!(name: params[:upload][:bus_name])
     parse_csv
+
+    if @trip.save
+      flash[:notice] = "Trip successfully added!"
+      redirect_to root_path
+    else
+      render :action => "checkin"
+    end
   end
 
   private

@@ -1,5 +1,5 @@
 class Trip < ActiveRecord::Base
   has_many :guest_infos
 
-  attr_accessible :departure_date, :name
+  attr_accessible :name, :bus_name
 end

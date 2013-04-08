@@ -1,5 +1,13 @@
 class GuestInfoController < ApplicationController
 
+  def list_guest_info
+    @guest = GuestInfo.all
+    @guest.each do |guest|
+      puts @guest.first_name
+      puts @guest.last_name
+    end
+  end
+
   def find_guest
     @guest = GuestInfo.find(params[:first_name])
   end

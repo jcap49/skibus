@@ -13,16 +13,21 @@
   float: right;
 }
 
+#addtrip-list-items {
+  margin-top: 5px;
+  margin-right: 80px;
+}
+
 #checkin-list-items {
   margin-top: 5px;
   margin-right: 70px;
-  
+
 }
 
 #registration-list-items {
   margin-top: 8px;
   margin-right: 220px;
-  
+
 }
 
 /* checkin */

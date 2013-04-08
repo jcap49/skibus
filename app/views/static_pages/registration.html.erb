@@ -1,0 +1,35 @@
+<div class="registration-wrapper">
+	<div class="row">
+		<h2 id="registration-banner">Guest Registration</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quis consequuntur alias suscipit illum dolorum recusandae hic quod odit molestiae. Cumque, dolorem ex facere voluptatem quia officia suscipit reiciendis neque.</p>
+		<br>
+		<h3>New Guest Registration</h3>
+		<%= form_for("#") do |f| %>
+			
+			<%= f.label :first_name, "First Name:" %>
+			<%= f.text_field :first_name %>
+
+			<%= f.label :last_name, "Last Name:" %>
+			<%= f.text_field :last_name %>
+
+			<%= f.label :address, "Street Address:" %>
+			<%= f.text_field :address %>
+			<%= f.text_field :address %>
+			
+			<%= f.label :phone_number, "Phone Number:" %>
+			<%= f.telephone_field :phone_number %>
+
+			<%= f.label :email, "Email Address:" %>
+			<%= f.email_field :email %>
+
+			<%= f.label :birthdate, "Date of Birth:" %>
+			<%= f.text_field :birthdate %>
+
+			<%= f.label :emergency_contact, "Emergency Contact - (Name and Phone Number)" %>
+			<%= f.text_field :emergency_contact %>
+
+			<%= f.submit "Register new guest", class: "button" %>
+
+		<% end %>
+	</div>
+</div>

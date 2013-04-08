@@ -1,0 +1,25 @@
+<div class="checkin-wrapper">
+	<div class="row">
+		<h2 id="checkin-banner">Guest Check-in</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, possimus, non, eveniet, error repudiandae unde atque enim molestias temporibus omnis eaque asperiores aperiam eligendi id assumenda doloremque quo itaque maxime!</p>
+
+	<%= form_for(:upload, url: uploads_path) do |f| %>
+		<%= f.label :bus_name, "Bus Name" %>
+    <%= f.text_field :bus_name %>
+
+    <%= f.label :file, "Please select the trip roster file to upload:" %>
+		<%= f.file_field :file %>
+
+		<%= f.submit "Upload" %>
+
+	<% end %>
+
+	<% if false #form_for("#") do |f| %>
+		<%= f.label :guest_name, "Please begin typing guest name (first or last name):" %>
+		<%= f.text_field :guest_name %>
+
+		<%= f.submit "Check in guest", class: "button" %>
+
+	<% end %>
+	</div>
+</div>

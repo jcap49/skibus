@@ -1,0 +1,11 @@
+<div id="uploads-wrapper">
+  <div class="row">
+    <h3>Cool - now that your file has been uploaded, time to check folks in.</h3>
+    <%= form_for :guest_infos do |f| %>
+      <%= f.label "Enter guest name:" %>
+      <%= f.search_field(:first_name) %>
+
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

@@ -1,6 +1,39 @@
-put trip info here
-<%= @trip.name %>
+<div class="row" id="trip-show">
+  <div id="trip-name">
+    <strong><u><%= @trip.name.capitalize %></u></strong>
+  </div>
 
-<% @guest_infos.each do |guest| %>
-  <p><%= guest.first_name %> <%= link_to 'Check in', check_in_guest_info_path(guest), :method => :put %></p>
-<% end %>
+  <div id="checkin-count">
+    <ul id="package-breakdwon">
+      <li><strong><u>Package Breakdown: </u></strong></li>
+      <li>Bus Only: </li>
+      <li>Adult:</li>
+      <li>Teen:</li>
+      <li>Child:</li>
+      <li>Senior:</li>
+      <li>Super Sr:</li>
+      <li>Ski Pkg:</li>
+      <li>Snow Pkg:</li>
+      <li>Int Ski Pkg:</li>
+      <li>Int Snow Pkg:</li>
+      <li>Ski School-1/2:</li>
+      <li>Ski School-Fl:</li>
+      <br>
+      <li><strong><u>Add-ons:</u></strong></li>
+      <li>Lesson</li>
+      <li>Ski Rent</li>
+      <li>Snow Rent</li>
+    </ul>
+      <br>
+    <strong><u>Total Attending: <%= @checked_in_count %></u></strong>
+  </div>
+
+  <div id="guest-info">
+    <% @guest_infos.each do |guest| %>
+      <p><%= guest.last_name %>,  <%= guest.first_name %>  <%= link_to 'Check in', check_in_guest_info_path(guest), :method => :put %></p>
+
+    <% end %>
+  </div>
+</div>
+
+

@@ -1,8 +1,10 @@
 <div class="trips-checkin-wrapper">
   <div class="row">
     <h2>Enter guest first or last name below:</h2>
-    <%= form_for(@guest_info) do |guest| %>
-      <%= print guest.first_name %>
-    <% end %>
+    <div class="row" id="trip-list">
+      <%= form_for(@guest_info) do |guest| %>
+        <%= print guest.last_name %>
+      <% end %>
+    </div>
   </div>
 </div>

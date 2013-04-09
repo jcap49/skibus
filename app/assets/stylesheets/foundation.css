@@ -1,3 +1,13 @@
+/* application */
+#flash {
+  margin: auto;
+  text-align: center;
+  margin-top: 180px;
+  position: absolute;
+  margin-left: 250px;
+  color: green;
+  font-size: 30px
+}
 
 /* home */
 .home-wrapper {
@@ -36,6 +46,33 @@
   text-align: center;
 }
 
+/* /trips */
+.trips-wrapper ul {
+  text-decoration: none;
+  list-style-type: none;
+  font-padding: -10px;
+}
+
+/* /trips/show */
+
+#trip-show {
+  height: 700px;
+}
+
+#checkin-count {
+  background-color: red;
+  width: 20%;
+  height: 80%;
+  float: right;
+}
+
+#checkin-count ul {
+  list-style-type: none;
+}
+
+#checkin-count li {
+  padding-left: 3%;
+}
 /* registration */
 #registration-banner {
   text-align: center;

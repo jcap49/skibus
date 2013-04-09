@@ -12,7 +12,6 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @guest_infos = @trip.guest_infos
-    # list all the guests
   end
 
   def find_trip

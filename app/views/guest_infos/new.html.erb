@@ -4,6 +4,7 @@
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quis consequuntur alias suscipit illum dolorum recusandae hic quod odit molestiae. Cumque, dolorem ex facere voluptatem quia officia suscipit reiciendis neque.</p>
 		<br>
 		<h3>New Guest Registration</h3>
+
 		<%= form_for @guest_info do |f| %>
 
 			<%= f.label :first_name, "First Name:" %>
@@ -31,5 +32,6 @@
 			<%= f.submit "Register new guest", class: "button" %>
 
 		<% end %>
+
 	</div>
 </div>

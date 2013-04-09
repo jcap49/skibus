@@ -5,7 +5,7 @@
 		<br>
 		<h3>New Guest Registration</h3>
 
-		<%= form_for @guest_info do |f| %>
+		<%= form_for(@guest_info) do |f| %>
 
 			<%= f.label :first_name, "First Name:" %>
 			<%= f.text_field :first_name %>
@@ -13,21 +13,8 @@
 			<%= f.label :last_name, "Last Name:" %>
 			<%= f.text_field :last_name %>
 
-			<%#= f.label :address, "Street Address:" %>
-			<%#= f.text_field :address %>
-			<%#= f.text_field :address %>
-
 			<%= f.label :phone, "Phone Number:" %>
 			<%= f.telephone_field :phone %>
-
-			<%#= f.label :email, "Email Address:" %>
-			<%#= f.email_field :email %>
-
-			<%#= f.label :birthdate, "Date of Birth:" %>
-			<%#= f.text_field :birthdate %>
-
-			<%#= f.label :emergency_contact, "Emergency Contact - (Name and Phone Number)" %>
-			<%#= f.text_field :emergency_contact %>
 
 			<%= f.submit "Register new guest", class: "button" %>
 

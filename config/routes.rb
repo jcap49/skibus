@@ -1,7 +1,7 @@
 SkiBus::Application.routes.draw do
 
   resources :trips, only: [:index, :new, :create, :show]
-  resources :guest_infos, only: [:new] do
+  resources :guest_infos, only: [:index, :new, :create] do
     put :check_in, on: :member
   end
 

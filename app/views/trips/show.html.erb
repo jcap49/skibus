@@ -1,0 +1,6 @@
+put trip info here
+<%= @trip.name %>
+
+<% @guest_infos.each do |guest| %>
+  <p><%= guest.first_name %> <%= link_to 'Check in', check_in_guest_info_path(guest), :method => :put %></p>
+<% end %>

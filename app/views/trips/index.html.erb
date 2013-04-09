@@ -4,7 +4,9 @@
 		<p>Select your trip from the list below and you'll be good to start checking guests in!</p>
 
 		<% @trips.each do |trip| %>
-			<%= trip.name %>
+			<%= link_to trip.name, trip %>
+      <%= trip.departure_date %>
+
 		<% end %>
 
 	</div>

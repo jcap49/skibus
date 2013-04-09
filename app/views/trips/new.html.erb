@@ -1,0 +1,23 @@
+<div class="add-trip-wrapper">
+  <div class="row">
+    <h2>Add a trip</h2>
+    <p>Select the .CSV file containing the trip roster that will be uploaded and hit submit.
+      You'll then be able to select your trip and start checking guests in!</p>
+    <br>
+
+    <%= form_for @trip, :html => { :multipart => true } do |f| %>
+      <%= f.label :name, "Trip Destination" %>
+      <%= f.text_field :name %>
+
+      <%= f.label :departure_date, "Departure Date" %>
+      <%= f.text_field :departure_date %>
+
+      <%= label_tag :file, "Please select the trip roster file to upload:" %>
+      <%= file_field_tag :file %>
+
+      <%= f.submit "Upload" %>
+
+    <% end %>
+
+  </div>
+</div>

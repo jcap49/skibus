@@ -1,6 +1,6 @@
 <div class="row" id="trip-show">
   <div id="trip-name">
-    <strong><u><%= @trip.name.capitalize %></u></strong>
+    <strong><u><%= @trip.name.capitalize %> Bus: <%= @trip.bus_number %></u></strong>
   </div>
 
   <div id="checkin-count">
@@ -25,7 +25,7 @@
       <li>Snow Rent</li>
     </ul>
       <br>
-    <strong><u>Total Attending: <%= @checked_in_count %></u></strong>
+    <strong><u>Total Attending:</u></strong>  <%= @checked_in_count %>
   </div>
 
   <div id="guest-info">

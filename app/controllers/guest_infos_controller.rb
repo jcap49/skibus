@@ -1,7 +1,5 @@
 class GuestInfosController < ApplicationController
 
-  @checked_in_count = GuestInfo.where('check_in = true').count
-
   def new
     @guest_info = GuestInfo.new
   end

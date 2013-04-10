@@ -12,6 +12,7 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @guest_infos = @trip.guest_infos
+    @checked_in_count = GuestInfo.where('check_in = true').count
   end
 
   def find_trip

@@ -13,11 +13,8 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @guest_infos = @trip.guest_infos
     @checked_in_count = GuestInfo.where('check_in = true').count
+    #@bus_only_total = GuestInfo.find(params[:id][:ticket]).where('check_in = true').count
   end
-
-  def find_trip
-  end
-
 
   def create
     # binding.pry

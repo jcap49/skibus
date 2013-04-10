@@ -6,7 +6,7 @@
   <div id="checkin-count">
     <ul id="package-breakdwon">
       <li><strong><u>Package Breakdown: </u></strong></li>
-      <li>Bus Only: </li>
+      <li>Bus Only: <%= @bus_only_total %></li>
       <li>Adult:</li>
       <li>Teen:</li>
       <li>Child:</li>
@@ -31,7 +31,6 @@
   <div id="guest-info">
     <% @guest_infos.each do |guest| %>
       <p><%= guest.last_name %>,  <%= guest.first_name %>  <%= link_to 'Check in', check_in_guest_info_path(guest), :method => :put %></p>
-
     <% end %>
   </div>
 </div>

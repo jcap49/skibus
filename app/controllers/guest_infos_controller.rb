@@ -9,11 +9,13 @@ class GuestInfosController < ApplicationController
   end
 
   def create
-    @guest_info = GuestInfo.create!(params[:guest_info])
+    @guest_info = GuestInfo.new(params[:guest_info])
+    @trip = Trip.find(params[:guest_info][:trip_id])
+    @guest_info.trip = @trip
 
-    @guest_info.save
+
     if @guest_info.save
-      flash[:succes] = "Guest has been successfully registered!"
+      flash[:success] = "Guest has been successfully registered!"
       redirect_to root_url
     else
       redirect_to # add warning/fatal message & proper redirect location
@@ -27,7 +29,8 @@ class GuestInfosController < ApplicationController
 
     if @guest_info.save
       flash[:success] = "Guest successfully checked in!"
-      redirect_to "/trips/#{@trip_id}"
+      redirect_to "/trips/"
+
     else
       render :action => "checkin"
     end

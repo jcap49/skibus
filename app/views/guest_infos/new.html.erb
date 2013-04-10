@@ -6,21 +6,15 @@
 		<h3>New Guest Registration</h3>
 
 		<%= form_for(@guest_info) do |f| %>
-
+			Select trip:
+			<%= collection_select(:guest_info, :trip_id, Trip.all, :id, :name_with_bus_number_and_departure_date) %>
+			<br>
+			<br>
 			<%= f.label :first_name, "First Name:" %>
 			<%= f.text_field :first_name %>
 
 			<%= f.label :last_name, "Last Name:" %>
 			<%= f.text_field :last_name %>
-
-			<%= f.label :destination, "Destination:" %>
-			<%= f.text_field :destination %>
-
-			<%= f.label :trip_date, "Trip Date:" %>
-			<%= f.text_field :trip_date %>
-
-			<%= f.label :bus_number, "Bus Number:" %>
-			<%= f.text_field :bus_number %>
 
 			<%= f.label :phone, "Phone Number:" %>
 			<%= f.telephone_field :phone %>

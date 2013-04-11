@@ -16,7 +16,7 @@ class GuestInfosController < ApplicationController
 
     if @guest_info.save
       flash[:success] = "Guest has been successfully registered!"
-      redirect_to root_url
+      redirect_to new_charge_path
     else
       redirect_to # add warning/fatal message & proper redirect location
     end

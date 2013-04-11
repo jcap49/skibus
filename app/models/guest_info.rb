@@ -10,7 +10,13 @@ class GuestInfo < ActiveRecord::Base
     "Ride only" => "RIDEONLY",
   }
 
-  def show_ticket_packages
-   "#{TICKET_PACKAGE_TYPES.each {|key, value| puts "#{key}, #{value}"}}"
+  TICKET_PACKAGE_PRICES = {
+    "Bus and Ticket" => 13900,
+    "Bus only" => 7900,
+    "Ride only" => 4900
+  }
+
+  def show_ticket_prices
+   "#{TICKET_PACKAGE_PRICES.each {|key, value| puts "#{key}, #{value}"}}"
   end
 end

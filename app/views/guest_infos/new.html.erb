@@ -5,11 +5,16 @@
 		<br>
 		<h3>New Guest Registration</h3>
 
+		Select package:
+		<br>
+		<br>
 		<%= form_for(@guest_info) do |f| %>
-			Select trip:
-			<%= collection_select(:guest_info, :trip_id, Trip.all, :id, :name_with_bus_number_and_departure_date) %>
-			<br>
-			<br>
+			<%= f.label :trip, 'Select trip:' %>
+			<%= f.collection_select :trip_id, Trip.active, :id, :name_with_bus_number_and_departure_date %>
+
+			<%= f.label :ticket, 'Select package:' %>
+			<%= f.select :ticket, GuestInfo::TICKET_PACKAGE_TYPES %>
+
 			<%= f.label :first_name, "First Name:" %>
 			<%= f.text_field :first_name %>
 
@@ -22,6 +27,7 @@
 			<%= f.submit "Register new guest", class: "button" %>
 
 		<% end %>
-
+		Amount:
+		<%= render 'layouts/charges' %>
 	</div>
 </div>

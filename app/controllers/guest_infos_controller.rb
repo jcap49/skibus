@@ -5,7 +5,6 @@ class GuestInfosController < ApplicationController
   end
 
   def index
-
   end
 
   def create
@@ -22,9 +21,23 @@ class GuestInfosController < ApplicationController
     end
   end
 
-  def check_in
+  def checked_in_morning
     @guest_info = GuestInfo.find(params[:id])
-    @guest_info[:check_in] = true
+    @guest_info[:checked_in_morning] = true
+    @guest_info.save
+
+    if @guest_info.save
+      flash[:success] = "Guest successfully checked in!"
+      redirect_to trip_path(@guest_info.trip)
+
+    else
+      render :action => "checkin"
+    end
+  end
+
+  def checked_in_afternoon
+    @guest_info = GuestInfo.find(params[:id])
+    @guest_info[:checked_in_afternoon] = true
     @guest_info.save
 
     if @guest_info.save

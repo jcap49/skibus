@@ -15,14 +15,18 @@
       <br>
     </ul>
       <br>
-    <strong><u>Total Checked In <strong>(Morning)</strong></u></strong>  <%= @checked_in_count %>
+    <strong><u>Total Checked In <strong>(Morning)</strong></u></strong>  <%= @checked_in_morning_count %>
       <br>
-    <strong><u>Total Checked In <strong>(Afternoon)</strong></u></strong>
+    <strong><u>Total Checked In <strong>(Afternoon)</strong></u></strong> <%= @checked_in_afternoon_count %>
   </div>
 
   <div id="guest-info">
     <% @guest_infos.each do |guest| %>
-      <p><%= guest.last_name %>,  <%= guest.first_name %>  <%= link_to 'Check in', check_in_guest_info_path(guest), :method => :put %></p>
+      <p>
+        <%= guest.last_name %>,  <%= guest.first_name %>
+        <%= link_to 'Morning', checked_in_morning_guest_info_path(guest), :method => :put %>
+        <%= link_to 'Afternoon', checked_in_afternoon_guest_info_path(guest), :method => :put %>
+      </p>
     <% end %>
   </div>
 </div>

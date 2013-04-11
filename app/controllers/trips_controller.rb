@@ -13,7 +13,11 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @guest_infos = @trip.guest_infos.order("last_name ASC")
     @checked_in_count = GuestInfo.where('check_in = true').count
-    #@bus_only_total = GuestInfo.find(params[:id][:ticket]).where('check_in = true').count
+    @bus_only_count = GuestInfo.where(:ticket => "BUSONLY").count unless "check_in" == false
+    @ticket_and_ski_rental_count = GuestInfo.where(:ticket => "TIXnSKIRENT ").count unless "check_in" == false
+    @ticket_and_lunch_count = GuestInfo.where(:ticket => "TICKET LUNCH18").count unless "check_in" == false
+    @ticket_and_board_rental_count = GuestInfo.where(:ticket => "TIXnSNOWRENT").count unless "check_in" == false
+    @ticket_lunch_board_lesson = GuestInfo.where(:ticket => "SNOWPKGBEG2 LUNCH18").count unless "check_in" == false
   end
 
   def create

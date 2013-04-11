@@ -7,22 +7,12 @@
     <ul id="package-breakdwon">
       <li><strong><u>Package Breakdown: </u></strong></li>
       <li>Bus Only: <%= @bus_only_total %></li>
-      <li>Adult:</li>
-      <li>Teen:</li>
-      <li>Child:</li>
-      <li>Senior:</li>
-      <li>Super Sr:</li>
-      <li>Ski Pkg:</li>
-      <li>Snow Pkg:</li>
-      <li>Int Ski Pkg:</li>
-      <li>Int Snow Pkg:</li>
-      <li>Ski School-1/2:</li>
-      <li>Ski School-Fl:</li>
+      <li>Ticket and Ski Rental: <%= @ticket_and_ski_rental_count %></li>
+      <li>Ticket and Lunch: <%= @ticket_and_lunch_count %></li>
+      <li>Ticket and Snowboard Rental: <%= @ticket_and_board_rental_count %></li>
+      <li>Ticket, Board, Lesson, Lunch: <%= @ticket_lunch_board_lesson %></li>
+      <li>Adult Tickets: <%= @checked_in_count %></li>
       <br>
-      <li><strong><u>Add-ons:</u></strong></li>
-      <li>Lesson</li>
-      <li>Ski Rent</li>
-      <li>Snow Rent</li>
     </ul>
       <br>
     <strong><u>Total Checked In <strong>(Morning)</strong></u></strong>  <%= @checked_in_count %>

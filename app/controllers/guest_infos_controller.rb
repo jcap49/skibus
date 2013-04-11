@@ -29,7 +29,7 @@ class GuestInfosController < ApplicationController
 
     if @guest_info.save
       flash[:success] = "Guest successfully checked in!"
-      redirect_to "/trips/"
+      redirect_to trip_path(@guest_info.trip)
 
     else
       render :action => "checkin"

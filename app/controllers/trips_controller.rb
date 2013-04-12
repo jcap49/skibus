@@ -24,7 +24,7 @@ class TripsController < ApplicationController
     # @ticket_and_board_rental_count = GuestInfo.checked_in_morning.where(:ticket => "TIXnSNOWRENT").count
     # @ticket_lunch_board_lesson     = GuestInfo.checked_in_morning.where(:ticket => "SNOWPKGBEG2 LUNCH18").count
 
-    @grouped_tickets = GuestInfo.checked_in_morning.group(:ticket).count(:id)
+    @grouped_tickets = GuestInfo.checked_in_morning.group(:ticket).count
   end
 
   def create

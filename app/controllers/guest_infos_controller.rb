@@ -12,7 +12,6 @@ class GuestInfosController < ApplicationController
     @trip = Trip.find(params[:guest_info][:trip_id])
     @guest_info.trip = @trip
 
-
     if @guest_info.save
       flash[:success] = "Guest has been successfully registered!"
       redirect_to new_charge_path

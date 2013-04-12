@@ -1,3 +1,5 @@
+<!-- TODO: add jquery script to hide hyperlinks after click -->
+
 <div class="row" id="trip-show">
   <div id="trip-name">
     <strong><u><%= @trip.name.capitalize %> Bus: <%= @trip.bus_number %></u></strong>
@@ -6,12 +8,18 @@
   <div id="checkin-count">
     <ul id="package-breakdwon">
       <li><strong><u>Package Breakdown: </u></strong></li>
+      <% @grouped_tickets.each do |ticket, quantity| %>
+        <li><%= GuestInfo::TICKET_PACKAGE_TYPES_BY_CODE[ticket] || ticket %>: <%= quantity %></li>
+      <% end %>
+      <!--
       <li>Bus Only: <%= @bus_only_total %></li>
+      <li>Ticket and Bus: <%= @ticket_and_bus %></li>
       <li>Ticket and Ski Rental: <%= @ticket_and_ski_rental_count %></li>
       <li>Ticket and Lunch: <%= @ticket_and_lunch_count %></li>
       <li>Ticket and Snowboard Rental: <%= @ticket_and_board_rental_count %></li>
       <li>Ticket, Board, Lesson, Lunch: <%= @ticket_lunch_board_lesson %></li>
       <li>Adult Tickets: <%= @checked_in_count %></li>
+      -->
       <br>
     </ul>
       <br>
@@ -24,8 +32,8 @@
     <% @guest_infos.each do |guest| %>
       <p>
         <%= guest.last_name %>,  <%= guest.first_name %>
-        <%= link_to 'Morning', checked_in_morning_guest_info_path(guest), :method => :put %>
-        <%= link_to 'Afternoon', checked_in_afternoon_guest_info_path(guest), :method => :put %>
+        <%= link_to 'Morning', checked_in_morning_guest_info_path(guest), :method => :put unless guest.checked_in_morning %>
+        <%= link_to 'Afternoon', checked_in_afternoon_guest_info_path(guest), :method => :put unless guest.checked_in_afternoon %>
       </p>
     <% end %>
   </div>

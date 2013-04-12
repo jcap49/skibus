@@ -12,13 +12,19 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @guest_infos = @trip.guest_infos.order("last_name ASC")
+
+
     @checked_in_morning_count = GuestInfo.where('checked_in_morning = true').count
     @checked_in_afternoon_count = GuestInfo.where('checked_in_afternoon = true').count
-    @bus_only_count = GuestInfo.where(:ticket => "BUSONLY").count unless "check_in" == false
-    @ticket_and_ski_rental_count = GuestInfo.where(:ticket => "TIXnSKIRENT ").count unless "checked_in_morning" == false
-    @ticket_and_lunch_count = GuestInfo.where(:ticket => "TICKET LUNCH18").count unless "checked_in_morning" == false
-    @ticket_and_board_rental_count = GuestInfo.where(:ticket => "TIXnSNOWRENT").count unless "checked_in_morning" == false
-    @ticket_lunch_board_lesson = GuestInfo.where(:ticket => "SNOWPKGBEG2 LUNCH18").count unless "checked_in_morning" == false
+
+    # @bus_only_count                = GuestInfo.checked_in_morning.where(:ticket => "BUSONLY").count
+    # @ticket_and_bus                = GuestInfo.checked_in_morning.where(:ticket => "").count
+    # @ticket_and_ski_rental_count   = GuestInfo.checked_in_morning.where(:ticket => "TIXnSKIRENT").count
+    # @ticket_and_lunch_count        = GuestInfo.checked_in_morning.where(:ticket => "TICKET LUNCH18").count
+    # @ticket_and_board_rental_count = GuestInfo.checked_in_morning.where(:ticket => "TIXnSNOWRENT").count
+    # @ticket_lunch_board_lesson     = GuestInfo.checked_in_morning.where(:ticket => "SNOWPKGBEG2 LUNCH18").count
+
+    @grouped_tickets = GuestInfo.checked_in_morning.group(:ticket).count(:id)
   end
 
   def create
@@ -54,7 +60,7 @@ class TripsController < ApplicationController
       last_name: row["Last Name"],
       city: row["City"],
       age: row["Age"],
-      ticket: row["Ticket"],
+      ticket: row["Ticket"].to_s.strip,
       phone: row["Phone"],
     }
     GuestInfo.create!(params)

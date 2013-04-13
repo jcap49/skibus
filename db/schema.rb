@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411195632) do
+ActiveRecord::Schema.define(:version => 20130413003924) do
 
   create_table "charges", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -31,11 +31,6 @@ ActiveRecord::Schema.define(:version => 20130411195632) do
     t.integer  "trip_id"
     t.boolean  "checked_in_morning"
     t.boolean  "checked_in_afternoon"
-  end
-
-  create_table "roster_files", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "trips", :force => true do |t|

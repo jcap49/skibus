@@ -72,9 +72,17 @@
 #checkin-count li {
   padding-left: 3%;
 }
+
 /* registration */
+
 #registration-banner {
   text-align: center;
+}
+
+/* charges/new */
+
+#customButton {
+  margin-top: 10%;
 }
 
 *,

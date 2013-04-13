@@ -7,10 +7,12 @@
 		<%= form_for(@guest_info) do |f| %>
 			<%= f.label :trip, 'Select trip:' %>
 			<%= f.collection_select :trip_id, Trip.active, :id, :name_with_bus_number_and_departure_date %>
-
+			<br>
+			<br>
 			<%= f.label :ticket, 'Select package:' %>
 			<%= f.select :ticket, GuestInfo::TICKET_PACKAGE_TYPES %>
-
+			<br>
+			<br>
 			<%= f.label :first_name, "First Name:" %>
 			<%= f.text_field :first_name %>
 

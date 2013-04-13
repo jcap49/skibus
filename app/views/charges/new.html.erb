@@ -1,26 +1,11 @@
-
-
 <div class="row" id="charges-wrapper">
   <h2>Guest Payment</h2>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, voluptate, iste, maiores, ullam voluptatibus neque dolorum dolor corrupti ratione id ea iure nulla autem fugit nemo iusto recusandae ex saepe.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, reiciendis, nisi, molestias aspernatur sed saepe quidem minima minus voluptates accusantium fugiat itaque eveniet voluptatem est magni iure libero! Atque, pariatur.</p>
-  <br>
-  <br>
-  <br>
-  <br>
+
   <span id="ticket-packages">
     <%= select "guest_info","ticket", GuestInfo::TICKET_PACKAGE_PRICES %>
   </span>
   <%= form_tag charges_path do %>
-    <br>
-    <br>
-    <article>
-      <label class="amount">
-        <span>Amount: <%= "#{}" %> </span>
-      </label>
-      <br>
-      <br>
-    </article>
-
   <button id="customButton">Purchase</button>
 
   <script>
@@ -34,9 +19,9 @@
         key:         'pk_test_ZrllAHn8bZX7CehK5SwcHkNA',
         address:     false,
         amount:      $("#guest_info_ticket").val(),
-        name:        'BASB',
+        name:        'Bay Area Ski Bus',
         description: $("#guest_info_ticket option:selected").html(),
-        panelLabel:  'Checkout',
+        panelLabel:  'Total: ',
         token:       token
       });
 

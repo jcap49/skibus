@@ -2,7 +2,7 @@ development:
   adapter: postgresql
   host: localhost
   encoding: unicode
-  database: Ski Bus_development
+  database: SkiBus_development
   pool: 5
   username: johncapecelatro
   password:
@@ -11,7 +11,7 @@ test:
   adapter: postgresql
   host: localhost
   encoding: unicode
-  database: Ski Bus_test
+  database: SkiBus_test
   pool: 5
   username: johncapecelatro
   password:
@@ -20,7 +20,7 @@ production:
   adapter: postgresql
   host: localhost
   encoding: unicode
-  database: Ski Bus_production
+  database: SkiBus_production
   pool: 5
-  username: johncapecelatro 
+  username: johncapecelatro
   password:
